@@ -1,5 +1,7 @@
 # slush-mongo [![Build Status](https://secure.travis-ci.org/arvindr21/slush-mongo.png?branch=master)](https://travis-ci.org/arvindr21/slush-mongo) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-mongo.png)](http://badges.enytc.com/for/npm/slush-mongo) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvindr21/slush-mongo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[![NPM](https://nodei.co/npm/slush-mongo.png?downloads=true&stars=true)](https://nodei.co/npm/slush-mongo/)
+
 > A slush generator for MongoDB
 
 
