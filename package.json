@@ -1,0 +1,41 @@
+{
+    "name": "slush-mongo",
+    "description": "A slush generator for MongoDB",
+    "version": "0.1.0",
+    "homepage": "https://github.com/arvindr21/slush-mongo",
+    "author": {
+        "name": "Arvind Ravulavaru",
+        "email": "arvind.ravulavaru@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/arvindr21/slush-mongo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/arvindr21/slush-mongo/issues"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/arvindr21/slush-mongo/blob/master/LICENSE"
+    }],
+    "main": "slushfile.js",
+    "engines": {
+        "node": ">= 0.10.26",
+        "npm": ">=1.4.3"
+    },
+    "scripts": {
+        "test": "echo \"No tests\""
+    },
+    "dependencies": {
+        "gulp": "^3.6.2",
+        "gulp-template": "^0.1.1",
+        "gulp-install": "^0.1.4",
+        "gulp-conflict": "^0.1.1",
+        "gulp-rename": "^1.2.0",
+        "underscore.string": "^2.3.3",
+        "inquirer": "^0.4.1"
+    },
+    "keywords": [
+        "slushgenerator"
+    ]
+}
