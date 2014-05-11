@@ -8,7 +8,8 @@
 
 'use strict';
 
-var gulp = require('gulp'),
+var path = require('path'),
+    gulp = require('gulp'),
     install = require('gulp-install'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
@@ -38,7 +39,76 @@ gulp.task('default', function (done) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/**')
+            gulp.src(__dirname + '/templates/default/**')
+                .pipe(template(answers))
+                .pipe(rename(function (file) {
+                    if (file.basename[0] === '_') {
+                        file.basename = '.' + file.basename.slice(1);
+                    }
+                }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'))
+                .pipe(install())
+                .on('end', function () {
+                    done();
+                });
+        });
+});
+
+gulp.task('mongoose', function (done) {
+    var prompts = [{
+        type: 'input',
+        name: 'appname',
+        message: 'What is the name of your app?',
+        default: path.basename(process.cwd())
+    },{
+      name: 'dbName',
+      message: 'Database Name',
+      type: 'input',
+      default: 'myDb'
+    },
+    {
+      name: 'dbHost',
+      message: 'Database Host',
+      type: 'input',
+      default: 'localhost'
+    },
+    {
+      name: 'dbUser',
+      message: 'Database User',
+      type: 'input',
+      default: ''
+    },
+    {
+      name: 'dbPassword',
+      message: 'Database Password',
+      type: 'password',
+      default: ''
+    },
+    {
+      name: 'dbPort',
+      message: 'Database Port',
+      type: 'input',
+      default: 27017
+    },
+    {
+      name: 'useHeroku',
+      message: 'Will you be using heroku?',
+      type: 'confirm',
+      default: true
+    }];
+    //Ask
+    inquirer.prompt(prompts,
+        function (answers) {
+
+            answers.nameDashed = _.slugify(answers.appname);
+            answers.modulename = _.camelize(answers.appname);
+
+            gulp.src(__dirname + '/templates/mongoose/static/index.html')
+                .pipe(conflict('./views'))
+                .pipe(gulp.dest('./views'));
+
+            gulp.src(__dirname + '/templates/mongoose/app/**')
                 .pipe(template(answers))
                 .pipe(rename(function (file) {
                     if (file.basename[0] === '_') {
