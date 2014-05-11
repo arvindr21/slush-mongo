@@ -104,7 +104,7 @@ gulp.task('mongoose', function (done) {
             answers.nameDashed = _.slugify(answers.appname);
             answers.modulename = _.camelize(answers.appname);
 
-            gulp.src(__dirname + '/templates/mongoose/static/index.html')
+            gulp.src(__dirname + '/templates/mongoose/static/views/index.html')
                 .pipe(conflict('./views'))
                 .pipe(gulp.dest('./views'));
 

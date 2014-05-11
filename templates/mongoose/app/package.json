@@ -22,7 +22,6 @@
     "gulp-watch": "~0.6.4"
   },
   "scripts": {
-    "postinstall": "gulp test",
     "test" : "gulp test",
     "start": "app.js"
   }	
