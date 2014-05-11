@@ -48,6 +48,13 @@ See the [CONTRIBUTING Guidelines](https://github.com/arvindr21/slush-mongo/blob/
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/arvindr21/slush-mongo/issues).
 
+## TODOS
+- [ ] add mongojs/express gen
+- [x] add mongoose/express gen
+- [ ] add mongoose schema gen
+- [ ] add mongoskin/express gen
+- [ ] add monk/koa gen
+
 ## License 
 
 The MIT License
