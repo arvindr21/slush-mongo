@@ -19,39 +19,53 @@ var path = require('path'),
 
 gulp.task('default', function (done) {
     var prompts = [{
-        type: 'input',
-        name: 'appName',
-        message: 'What is the name of your generator?',
-        default: gulp.args.join(' ')
-    }, {
-        type: 'input',
-        name: 'appDescription',
-        message: 'What is the description for your generator?'
-    }, {
-        type: 'confirm',
-        name: 'moveon',
-        message: 'Continue?'
+        type: 'list',
+        name: 'genName',
+        message: 'Which MongoDB project would you like to generate?',
+        choices: [
+        {
+          name: "Mongoose/Express",
+          value: "mongoose"
+        },
+        {
+          name: "Mongojs/Express",
+          value: "mongojs"
+        },
+        {
+          name: "Mongoskin/Express",
+          value: "mongoskin"
+        },
+        {
+          name: "Monk/Koa",
+          value: "monk"
+        }
+
+      ],
+        default: 'mongoose'
     }];
     //Ask
     inquirer.prompt(prompts,
         function (answers) {
-            if (!answers.moveon) {
+            if (!answers.genName) {
                 return done();
             }
-            answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/default/**')
-                .pipe(template(answers))
-                .pipe(rename(function (file) {
-                    if (file.basename[0] === '_') {
-                        file.basename = '.' + file.basename.slice(1);
-                    }
-                }))
-                .pipe(conflict('./'))
-                .pipe(gulp.dest('./'))
-                .pipe(install())
-                .on('end', function () {
-                    done();
-                });
+            answers.appNameSlug = _.slugify(answers.genName);
+            if(answers.genName == 'mongoose')
+            {
+              gulp.start('mongoose');
+            }  
+            else if(answers.genName == 'mongojs')
+            {
+              gulp.start('mongojs');
+            } 
+            else if(answers.genName == 'mongoskin')
+            {
+              gulp.start('mongoskin');
+            } 
+            else if(answers.genName == 'monk')
+            {
+              gulp.start('monk');
+            }  
         });
 });
 
@@ -113,6 +127,94 @@ gulp.task('mongoose', function (done) {
                 .pipe(rename(function (file) {
                     if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
+                    }
+                }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'))
+                .pipe(install())
+                .on('end', function () {
+                    done();
+                });
+        });
+});
+
+
+gulp.task('mongoskin', function (done) {
+    var prompts = [{
+        type: 'confirm',
+        name: 'moveon',
+        message: 'Scaffold a mongoskin project?'
+    }];
+    //Ask
+    inquirer.prompt(prompts,
+        function (answers) {
+            if (!answers.moveon) {
+                return done();
+            }
+            answers.appNameSlug = _.slugify(answers.appName);
+            gulp.src(__dirname + '/templates/mongoskin/**')
+                .pipe(template(answers))
+                .pipe(rename(function (file) {
+                    if (file.basename[0] === '_') {
+                        file.basename = '' + file.basename.slice(1);
+                    }
+                }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'))
+                .pipe(install())
+                .on('end', function () {
+                    done();
+                });
+        });
+});
+
+gulp.task('mongojs', function (done) {
+    var prompts = [{
+        type: 'confirm',
+        name: 'moveon',
+        message: 'Scaffold a mongojs project?'
+    }];
+    //Ask
+    inquirer.prompt(prompts,
+        function (answers) {
+            if (!answers.moveon) {
+                return done();
+            }
+            answers.appNameSlug = _.slugify(answers.appName);
+            gulp.src(__dirname + '/templates/mongojs/**')
+                .pipe(template(answers))
+                .pipe(rename(function (file) {
+                    if (file.basename[0] === '_') {
+                        file.basename = '' + file.basename.slice(1);
+                    }
+                }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'))
+                .pipe(install())
+                .on('end', function () {
+                    done();
+                });
+        });
+});
+
+gulp.task('monk', function (done) {
+    var prompts = [{
+        type: 'confirm',
+        name: 'moveon',
+        message: 'Scaffold a monk project?'
+    }];
+    //Ask
+    inquirer.prompt(prompts,
+        function (answers) {
+            if (!answers.moveon) {
+                return done();
+            }
+            answers.appNameSlug = _.slugify(answers.appName);
+            gulp.src(__dirname + '/templates/monk/**')
+                .pipe(template(answers))
+                .pipe(rename(function (file) {
+                    if (file.basename[0] === '_') {
+                        file.basename = '' + file.basename.slice(1);
                     }
                 }))
                 .pipe(conflict('./'))

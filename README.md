@@ -2,7 +2,12 @@
 
 [![NPM](https://nodei.co/npm/slush-mongo.png?downloads=true&stars=true)](https://nodei.co/npm/slush-mongo/)
 
-> A slush generator for MongoDB
+> A slush generator for MongoDB, that has the power to scaffold out starter projects for
+- mongojs/express gen [in progress]
+- mongoose/express gen [completed]
+- mongoose schema gen [in progress]
+- mongoskin/express gen [in progress]
+- monk/koa gen [in progress]
 
 
 ## Getting Started
