@@ -8,31 +8,36 @@
 
 <table>
 <tr> 
-<td>Generator</td><td>Status</td>
+<td>Generator</td><td>Description</td><td>Status</td>
 </tr>
 
 <tr>
 <td>Mongojs/Express</td>
+<td>A generator to scaffold a [Mongojs](https://github.com/mafintosh/mongojs) and [Express](http://expressjs.com) app</td>
 <td>Completed</td>
 </tr>
 
 <tr>
 <td>Mongoose/Express </td>
+<td>A generator to scaffold a [Mongoose](http://mongoosejs.com) and [Express](http://expressjs.com/) app</td>
 <td>Completed</td>
 </tr>
 
 <tr>
 <td>Mongoose schema sub-gen</td>
+<td>A sub-generator to scaffold a Mongoose schema for an existing [Mongoose](http://mongoosejs.com) and [Express](http://expressjs.com/) app</td>
 <td>In progress</td>
 </tr>
 
 <tr>
 <td>Mongoskin/Express &nbsp;&nbsp;</td>
+<td>A generator to scaffold a [MongoSkin](https://github.com/kissjs/node-mongoskin) and [Express](http://expressjs.com/) app</td>
 <td>In progress</td>
 </tr>
 
 <tr>
 <td>Monk/Koa</td>
+<td>A generator to scaffold a [Monk](https://github.com/LearnBoost/monk) and [Koa](http://koajs.com) app</td>
 <td>In progress</td>
 </tr>
 
