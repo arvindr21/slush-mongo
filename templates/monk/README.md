@@ -1,1 +1,1 @@
-Monk task!
+We are trying our best to get the Monk/Koa generator running. Hang in there buddy!

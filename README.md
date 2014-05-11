@@ -5,39 +5,6 @@
 
 > A powerful slush generator for MongoDB
 
-<table>
-<tr> 
-<td>Generates</td><td>Status</td>
-</tr>
-
-<tr>
-<td>mongojs/express project</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>mongoose/express project</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>mongoose schema sub-gen</td>
-<td>in progress</td>
-</tr>
-
-<tr>
-<td>mongoskin/express project &nbsp;&nbsp;</td>
-<td>in progress</td>
-</tr>
-
-<tr>
-<td>monk/koa project</td>
-<td>in progress</td>
-</tr>
-
-</table>
-
-
 ## Getting Started
 
 ### Installation
