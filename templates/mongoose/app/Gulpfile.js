@@ -10,7 +10,6 @@ var gulp = require('gulp'),
 gulp.task('test', function () {
   gulp.src('./test/*.js')
     .pipe(mocha({
-      timeout: 6000,
       ignoreLeaks: false,
       reporter: 'nyan'
     }));    
