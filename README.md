@@ -2,12 +2,40 @@
 
 [![NPM](https://nodei.co/npm/slush-mongo.png?downloads=true&stars=true)](https://nodei.co/npm/slush-mongo/)
 
-> A slush generator for MongoDB, that has the power to scaffold out starter projects for
-- mongojs/express gen [in progress]
-- mongoose/express gen [completed]
-- mongoose schema gen [in progress]
-- mongoskin/express gen [in progress]
-- monk/koa gen [in progress]
+
+> A powerful slush generator for MongoDB
+
+<table>
+<tr> 
+<td>Generates</td><td>Status</td>
+</tr>
+
+<tr>
+<td>mongojs/express project</td>
+<td>Completed</td>
+</tr>
+
+<tr>
+<td>mongoose/express project</td>
+<td>Completed</td>
+</tr>
+
+<tr>
+<td>mongoose schema sub-gen</td>
+<td>in progress</td>
+</tr>
+
+<tr>
+<td>mongoskin/express project &nbsp;&nbsp;</td>
+<td>in progress</td>
+</tr>
+
+<tr>
+<td>monk/koa project</td>
+<td>in progress</td>
+</tr>
+
+</table>
 
 
 ## Getting Started
@@ -40,6 +68,8 @@ Run the generator from within the new folder:
 $ cd my-slush-mongo && slush mongo
 ```
 
+And the pick the generator you would like to use.
+
 ## Getting To Know Slush
 
 Slush is a tool that uses Gulp for project scaffolding.
@@ -56,7 +86,7 @@ See the [CONTRIBUTING Guidelines](https://github.com/arvindr21/slush-mongo/blob/
 If you have any problem or suggestion please open an issue [here](https://github.com/arvindr21/slush-mongo/issues).
 
 ## TODOS
-- [ ] add mongojs/express gen
+- [x] add mongojs/express gen
 - [x] add mongoose/express gen
 - [ ] add mongoose schema gen
 - [ ] add mongoskin/express gen
@@ -88,4 +118,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-

@@ -1,0 +1,28 @@
+{
+  "name": "<%= nameDashed %>",
+  "description": "<%= modulename %> app description here",
+  "version": "0.0.1",
+  "private": true,
+	"dependencies": {
+		"ejs": "latest",
+		"express": "latest",
+		"mongojs": "latest",
+    "morgan": "latest",
+    "method-override": "latest",
+    "body-parser": "latest",
+    "errorhandler": "latest"
+	},
+  "devDependencies": {
+    "gulp": "latest",
+    "bower": "latest",
+    "supertest": "latest",
+    "mocha": "latest",
+    "gulp-nodemon": "latest",
+    "gulp-mocha": "latest",
+    "gulp-watch": "~0.6.4"
+  },
+  "scripts": {
+    "test" : "gulp test",
+    "start": "app.js"
+  }	
+}
