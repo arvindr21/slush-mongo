@@ -26,7 +26,7 @@
 <tr>
 <td>Mongoose schema sub-gen</td>
 <td>A sub-generator to scaffold a Mongoose schema for an existing Mongoose and Express app</td>
-<td>In progress</td>
+<td>Completed</td>
 </tr>
 
 <tr>
@@ -94,7 +94,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 ## TODOS
 - [x] add mongojs/express gen
 - [x] add mongoose/express gen
-- [ ] add mongoose schema gen
+- [x] add mongoose schema gen
 - [ ] add mongoskin/express gen
 - [ ] add monk/koa gen
 
