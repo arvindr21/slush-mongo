@@ -2,7 +2,7 @@
 
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
-  mocha = require('gulp-mocha'),
+  mocha = require('gulp-mocha-co'),
   watch = require('gulp-watch');
 
 
@@ -12,17 +12,17 @@ gulp.task('test', function (done) {
     .pipe(mocha({
       ignoreLeaks: false,
       reporter: 'nyan'
-    })).end(function() { done(); });   
+    })).end(function() { done(); });
 });
 
-gulp.task('nodemon', function () {
-  nodemon({ script: 'app.js', env: { 'NODE_ENV': 'development' }, nodeArgs: ['--debug=9999']})
-    .on('restart')
+gulp.task('nodemon', function (done) {
+  nodemon({ script: 'app.js', env: { 'NODE_ENV': 'development' }, nodeArgs: ['--debug=9999', '--harmony-generators']})
+    .on('restart');
 });
 
 // Rerun the task when a file changes
 
-gulp.task('watch', function() {
+gulp.task('watch', function(done) {
     gulp.src(['*.js','routes/*.js', 'models/*.js', 'config/*.js'], { read: true })
         .pipe(watch({ emit: 'all' }));
 });
