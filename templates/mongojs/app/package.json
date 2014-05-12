@@ -19,7 +19,8 @@
     "mocha": "latest",
     "gulp-nodemon": "latest",
     "gulp-mocha": "latest",
-    "gulp-watch": "~0.6.4"
+    "gulp-watch": "~0.6.4",
+    "forever": "latest"
   },
   "scripts": {
     "test" : "gulp test",
