@@ -1,7 +1,7 @@
 {
     "name": "slush-mongo",
     "description": "A slush generator for MongoDB",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "homepage": "https://github.com/arvindr21/slush-mongo",
     "author": {
         "name": "Arvind Ravulavaru",
