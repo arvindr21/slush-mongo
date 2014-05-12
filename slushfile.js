@@ -131,6 +131,13 @@ gulp.task('mongoose', function (done) {
         .pipe(conflict('./views'))
         .pipe(gulp.dest('./views'));
 
+      if(answers.useHeroku)
+      {
+        gulp.src(__dirname + '/templates/mongojs/heroku/Procfile')
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'));
+      }
+
       gulp.src(__dirname + '/templates/mongoose/app/**')
         .pipe(template(answers))
         .pipe(rename(function (file) {
@@ -334,6 +341,13 @@ gulp.task('mongojs', function (done) {
         .pipe(conflict('./views'))
         .pipe(gulp.dest('./views'));
 
+      if(answers.useHeroku)
+      {
+        gulp.src(__dirname + '/templates/mongojs/heroku/Procfile')
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'));
+      }
+
       gulp.src(__dirname + '/templates/mongojs/app/**')
         .pipe(template(answers))
         .pipe(rename(function (file) {
@@ -398,6 +412,13 @@ gulp.task('monk', function (done) {
         .pipe(conflict('./views'))
         .pipe(gulp.dest('./views'));
 
+      if(answers.useHeroku)
+      {
+        gulp.src(__dirname + '/templates/mongojs/heroku/Procfile')
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'));
+      }
+      
       gulp.src(__dirname + '/templates/monk/app/**')
         .pipe(template(answers))
         .pipe(rename(function (file) {
