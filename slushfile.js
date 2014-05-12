@@ -265,23 +265,65 @@ gulp.task('mongoose-schema', function (done) {
 });
 
 gulp.task('mongoskin', function (done) {
-  var prompts = [{
+ var prompts = [{
+    type: 'input',
+    name: 'appname',
+    message: 'What is the name of your app?',
+    default: path.basename(process.cwd())
+  }, {
+    name: 'dbName',
+    message: 'Database Name',
+    type: 'input',
+    default: 'myDb'
+  }, {
+    name: 'dbHost',
+    message: 'Database Host',
+    type: 'input',
+    default: 'localhost'
+  }, {
+    name: 'dbUser',
+    message: 'Database User',
+    type: 'input',
+    default: ''
+  }, {
+    name: 'dbPassword',
+    message: 'Database Password',
+    type: 'password',
+    default: ''
+  }, {
+    name: 'dbPort',
+    message: 'Database Port',
+    type: 'input',
+    default: 27017
+  }, {
+    name: 'useHeroku',
+    message: 'Will you be using heroku?',
     type: 'confirm',
-    name: 'moveon',
-    message: 'Scaffold a mongoskin project?'
+    default: true
   }];
   //Ask
   inquirer.prompt(prompts,
     function (answers) {
-      if (!answers.moveon) {
-        return done();
+
+      answers.nameDashed = _.slugify(answers.appname);
+      answers.modulename = _.camelize(answers.appname);
+
+      gulp.src(__dirname + '/templates/mongoskin/static/views/index.html')
+        .pipe(conflict('./views'))
+        .pipe(gulp.dest('./views'));
+
+      if(answers.useHeroku)
+      {
+        gulp.src(__dirname + '/templates/mongoskin/heroku/Procfile')
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'));
       }
-      answers.appNameSlug = _.slugify(answers.appName);
-      gulp.src(__dirname + '/templates/mongoskin/**')
+
+      gulp.src(__dirname + '/templates/mongoskin/app/**')
         .pipe(template(answers))
         .pipe(rename(function (file) {
           if (file.basename[0] === '_') {
-            file.basename = '' + file.basename.slice(1);
+            file.basename = '.' + file.basename.slice(1);
           }
         }))
         .pipe(conflict('./'))

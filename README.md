@@ -2,47 +2,7 @@
 
 [![NPM](https://nodei.co/npm/slush-mongo.png?downloads=true&stars=true)](https://nodei.co/npm/slush-mongo/)
 
-
 > A powerful slush generator for MongoDB
-
-
-<table>
-<tr> 
-<td>Generator</td><td>Description</td><td>Status</td>
-</tr>
-
-<tr>
-<td>Mongojs/Express</td>
-<td>A generator to scaffold a Mongojs and Express app</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>Mongoose/Express </td>
-<td>A generator to scaffold a Mongoose and Express app</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>Mongoose schema sub-gen</td>
-<td>A sub-generator to scaffold a Mongoose schema for an existing Mongoose and Express app</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>Mongoskin/Express &nbsp;&nbsp;</td>
-<td>A generator to scaffold a MongoSkin and Express app</td>
-<td>In progress</td>
-</tr>
-
-<tr>
-<td>Monk/Koa</td>
-<td>A generator to scaffold a Monk and Koa app</td>
-<td>Completed</td>
-</tr>
-
-</table>
-
 
 ## Getting Started
 
@@ -95,7 +55,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 - [x] add mongojs/express gen
 - [x] add mongoose/express gen
 - [x] add mongoose schema gen
-- [ ] add mongoskin/express gen
+- [x] add mongoskin/express gen
 - [x] add monk/koa gen
 
 ## License 
