@@ -163,13 +163,13 @@ gulp.task('mongoose-schema', function (done) {
   inquirer.prompt(prompts,
     function (answers) {
 
-      answers.schemaSlug = _.slugify(answers.schemaName);
-      answers.schemaCamelized = _.camelize(answers.schemaName);
+        answers.schemaSlug = _.slugify(answers.schemaName);
+        answers.schemaCamelized = _.camelize(answers.schemaName);
 
-      var fields = answers.properties.split(',');
-      
-      answers.schemaFields = fields;
-      answers.mockData = "{}";
+        var fields = answers.properties.split(',');
+        
+        answers.schemaFields = fields;
+        answers.mockData = "{}";
 
 
         console.log("Your creating a schema for " + answers.schemaCamelized);
@@ -352,22 +352,57 @@ gulp.task('mongojs', function (done) {
 
 gulp.task('monk', function (done) {
   var prompts = [{
+    type: 'input',
+    name: 'appname',
+    message: 'What is the name of your app?',
+    default: path.basename(process.cwd())
+  }, {
+    name: 'dbName',
+    message: 'Database Name',
+    type: 'input',
+    default: 'myDb'
+  }, {
+    name: 'dbHost',
+    message: 'Database Host',
+    type: 'input',
+    default: 'localhost'
+  }, {
+    name: 'dbUser',
+    message: 'Database User',
+    type: 'input',
+    default: ''
+  }, {
+    name: 'dbPassword',
+    message: 'Database Password',
+    type: 'password',
+    default: ''
+  }, {
+    name: 'dbPort',
+    message: 'Database Port',
+    type: 'input',
+    default: 27017
+  }, {
+    name: 'useHeroku',
+    message: 'Will you be using heroku?',
     type: 'confirm',
-    name: 'moveon',
-    message: 'Scaffold a monk project?'
+    default: true
   }];
   //Ask
   inquirer.prompt(prompts,
     function (answers) {
-      if (!answers.moveon) {
-        return done();
-      }
-      answers.appNameSlug = _.slugify(answers.appName);
-      gulp.src(__dirname + '/templates/monk/**')
+
+      answers.nameDashed = _.slugify(answers.appname);
+      answers.modulename = _.camelize(answers.appname);
+
+      gulp.src(__dirname + '/templates/monk/static/views/index.html')
+        .pipe(conflict('./views'))
+        .pipe(gulp.dest('./views'));
+
+      gulp.src(__dirname + '/templates/monk/app/**')
         .pipe(template(answers))
         .pipe(rename(function (file) {
           if (file.basename[0] === '_') {
-            file.basename = '' + file.basename.slice(1);
+            file.basename = '.' + file.basename.slice(1);
           }
         }))
         .pipe(conflict('./'))

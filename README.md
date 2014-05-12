@@ -38,7 +38,7 @@
 <tr>
 <td>Monk/Koa</td>
 <td>A generator to scaffold a Monk and Koa app</td>
-<td>In progress</td>
+<td>Completed</td>
 </tr>
 
 </table>
@@ -96,7 +96,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 - [x] add mongoose/express gen
 - [x] add mongoose schema gen
 - [ ] add mongoskin/express gen
-- [ ] add monk/koa gen
+- [x] add monk/koa gen
 
 ## License 
 
