@@ -4,6 +4,15 @@
 
 > A powerful slush generator for MongoDB
 
+## Generators
+* Mongoose/Express
+* Mongojs/Express
+* Mongoskin/Express
+* Monk/Koa
+
+### Sub-Generators 
+* Mongoose Schema
+
 ## Getting Started
 
 ### Installation
