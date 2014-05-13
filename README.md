@@ -59,7 +59,7 @@ If you are working with Koa/Monk app, make sure you have installed Node 0.11.12 
 ```Bash
 $ npm install -g n
 $ n 0.11.12
-$ gulp
+$ node --harmony-generators `which gulp`
 ```
 
 ## Getting To Know Slush
