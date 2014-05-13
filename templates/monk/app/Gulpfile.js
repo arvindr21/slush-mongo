@@ -7,22 +7,22 @@ var gulp = require('gulp'),
 
 
 // Copy all static images
-gulp.task('test', function (done) {
+gulp.task('test', function () {
   gulp.src('./test/*.js')
     .pipe(mocha({
       ignoreLeaks: false,
       reporter: 'nyan'
-    })).end(function() { done(); });
+    }));
 });
 
-gulp.task('nodemon', function (done) {
+gulp.task('nodemon', function () {
   nodemon({ script: 'app.js', env: { 'NODE_ENV': 'development' }, nodeArgs: ['--debug=9999', '--harmony-generators']})
     .on('restart');
 });
 
 // Rerun the task when a file changes
 
-gulp.task('watch', function(done) {
+gulp.task('watch', function() {
     gulp.src(['*.js','routes/*.js', 'models/*.js', 'config/*.js'], { read: true })
         .pipe(watch({ emit: 'all' }));
 });

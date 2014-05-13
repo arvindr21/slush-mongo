@@ -7,12 +7,12 @@ var gulp = require('gulp'),
 
 
 // Copy all static images
-gulp.task('test', function (done) {
+gulp.task('test', function () {
   gulp.src('./test/*.js')
     .pipe(mocha({
       ignoreLeaks: false,
       reporter: 'nyan'
-    })).end(function() { done(); });   
+    }));   
 });
 
 gulp.task('nodemon', function () {
