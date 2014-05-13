@@ -53,6 +53,11 @@ To run the app execute
 ```Bash
 $ gulp
 ```
+To run the koa app execute 
+
+```
+$ node --harmony-generators `which gulp`
+```
 
 If you are working with Koa/Monk app, make sure you have installed Node 0.11.12 version. Alternatively, you can execute the below commands to install node 0.11.12v
 
