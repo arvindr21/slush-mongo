@@ -48,14 +48,14 @@ And the pick the generator you would like to use.
 
 ### Running the app
 
-To run the app execute 
+To run the express app execute 
 
 ```Bash
 $ gulp
 ```
 To run the koa app execute 
 
-```
+```Bash
 $ node --harmony-generators `which gulp`
 ```
 

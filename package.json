@@ -1,7 +1,7 @@
 {
     "name": "slush-mongo",
     "description": "A slush generator for MongoDB, which can scaffold Express/Mongojs, Express/Mongoose, Express/Mongoskin and Koa/Monk apps",
-    "version": "0.4.6",
+    "version": "0.4.7",
     "homepage": "https://github.com/arvindr21/slush-mongo",
     "author": {
         "name": "Arvind Ravulavaru",
