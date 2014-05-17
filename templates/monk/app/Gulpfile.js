@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('test', function () {
   gulp.src('./test/*.js')
     .pipe(mocha({
-      ignoreLeaks: false,
+      ignoreLeaks: true,
       reporter: 'nyan'
     }));
 });
