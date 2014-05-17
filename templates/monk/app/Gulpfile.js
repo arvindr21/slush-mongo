@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('test', function () {
   gulp.src('./test/*.js')
     .pipe(mocha({
-      ignoreLeaks: true,
+      ignoreLeaks: false,
       reporter: 'nyan'
     }));
 });
@@ -28,4 +28,4 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', [/*'test',*/ 'nodemon', 'watch']);
+gulp.task('default', ['test', 'nodemon', 'watch']);

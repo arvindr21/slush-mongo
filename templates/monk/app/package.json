@@ -18,7 +18,7 @@
     "co-views": "latest",
     "co-body": "latest",
     "co-monk": "latest",
-    "monk": "latest",
+    "monk": "0.8.0",
     "koa-session": "latest",
     "ejs": "latest"
   },
